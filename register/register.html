@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="register.css">
 	<link rel="stylesheet" href="index.html">
     <link rel="stylesheet" href="sony.js">
+	<link rel="stylesheet" href="../login/login.html">
     <title>Registration page</title>
 	<link rel="shortcut icon" href="../images/logo2.png" type="image/x-icon">
 </head>
@@ -21,61 +22,69 @@
 <div class="container" id="container">
 	
 	<div class="form-container sign-up-container">
-		<form action="#" method="POST">
+		<form action="#" id="athlete-registration-form">
 			<h1>Register as Athlete</h1>
 			<span>Please fill in appropriately</span>
-			<input type="text" placeholder="First Name"/>
-			<input type="text" placeholder="Last Name"/>
-			<input type="email" placeholder="Email Address"/>
-			<input type="text" placeholder="Sex"/>
-			<input type="date" placeholder="Date of Birth"/>
-			<input type="name" placeholder="Marital Status"/>
-			<input type="text" placeholder="Enter Sports Preference">
-			<input type="text" placeholder="Address"/>
-			<input type="tel" placeholder="Phone Number"/>
-			<input type="text" placeholder="Next of Kin"/>
-			<input type="tel" placeholder="Next of Kin's Phone Number"/>
-			<input type="email" placeholder="Next of Kin's Email Address"/>
-			<input type="text" placeholder="Next of Kin's Address"/>
-			<input type="password" placeholder="Create Password">
-			<input type="password" placeholder="Re-Create Password">
-			<button>Sign Up</button>
+			<input type="text" id="athlete-firstname" placeholder="First Name"/>
+			<input type="text" id="athlete-lastname" placeholder="Last Name"/>
+			<input type="text" id="athlete-email" placeholder="Email Address"/>
+			<input type="text" id="athlete-gender" placeholder="Sex"/>
+			<input type="date" id="athlete-dob" placeholder="Date of Birth"/>
+			<input type="name" id="athlete-marital-status" placeholder="Marital Status"/>
+			<input type="text" id="athlete-sport-preference" placeholder="Choice of Sports">
+			<input type="text" id="athlete-address" placeholder="Address"/>
+			<input type="tel" id="athlete-phone" placeholder="Phone Number"/>
+			<input type="text" id="athlete-next-of-kin" placeholder="Next of Kin"/>
+			<input type="tel" id="athlete-next-of-kin-phone" placeholder="Next of Kin's Phone Number"/>
+			<input type="email" id="athlete-next-of-kin-email" placeholder="Next of Kin's Email Address"/>
+			<input type="text" id="athlete-next-of-kin-address" placeholder="Next of Kin's Address"/>
+			<input type="athlete-password" placeholder="Create Password">
+			<input type="confirm-athlete-password" placeholder="Re-Create Password">
+			<button type="submit" id="register-athlete">Sign Up</button>
 			<p>Already Have an Account?</p>
-			<button>Log in</button>
+			<button>
+				<a href="../login/login.html" style="color: white;">
+					Log in
+				</a>
+			</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#" method="POST">
-			<h1>Register a Team</h1>
+		<form action="#" id="scout-registration-form">
+			<h1>Register as Scout</h1>
 			<span>Please enter your information correctly</span>
-			<input type="text" placeholder="Team Name"/>
-			<input type="tel" placeholder="Number of Athletes" />
-			<input type="text" placeholder="Team Coach/Leader" />
-			<!-- <input type="text" placeholder="Sport Preference" /> -->
-			<!-- <input type="text" placeholder="Height" />
-				<input type="text" placeholder="Weight" />
-				<input type="text" placeholder="Blood Group" />
-				<input type="text" placeholder="Genotype" /> -->
-				<input type="text" placeholder="Choice of Sports" />
-				<input type="email" placeholder="Team Email" />
-			<input type="text" placeholder="Team Address" />
-			<input type="text" placeholder="Phone Number" />
-			<!-- <input type="text" placeholder="Email" /> -->
-			<input type="password" placeholder="Create Password" />
-			<input type="password" placeholder="Re-Enter Password" />
+			<input type="text" id="scout-name" placeholder="Name"/>
+			<input type="tel" id="scout-phone-number" placeholder="Phone Number"/>
+			<input type="text" id="scout-sex" placeholder="Sex"/>
+			<input type="date" id="scout-coach" placeholder="Date of Birth"/>
+			<input type="text" id="scout-choice" placeholder="Choice of Sports"/>
+			<input type="text" id="scout-nationality" placeholder="Naitonality"/>
+			<input type="scout-email" id="scout-email" placeholder="Email Address"/>
+			<input type="text" id="scout-address" placeholder="Residential Address"/>
+			<input type="text" id="scout-phone" placeholder="Phone Number"/>
+			<input type="text" id="scout-password" placeholder="Create Password"/>
+			<input type="text" id="confirm-scout-password" placeholder="Re-Enter Password"/>
 			<!-- <a href="#">Forgot your password?</a> -->
-			<button>SUBMIT</button>
+			<button type="submit" id="register-scout">SUBMIT</button>
 			<p>Already have an Accoun?</p>
-			<button>Log in</button>
+				<button>
+					<a href="../login/login.html" style="color: white;">
+						Log in
+					</a>
+				</button>
 			<br><hr><hr>
+
+			<div id="loadingPopup" class="loading-popup">
+				<div class="loader"></div>
+			  </div>
 		</form>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Click here to Register as a Team</h1>
-				<p>Enter your Team's details and start journey with us</p>
-				<button class="ghost" id="signIn">FOR TEAM</button><br>
+				<h1>Click here to Register as a Scout</h1>
+				<p>Enter your details and start journey with us</p>
+				<button class="ghost" id="signIn">FOR SCOUT</button><br>
 				<a href="../index.html"><button class="ghost" id="signIn">Back to Home</button></a>
 			</div>
 			<div class="overlay-panel overlay-right">
@@ -96,11 +105,20 @@
 
 <script src="sony.css"></script>
 <script src="sony.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-storage.js"></script>
+
+<script src="../js/auth.js"></script>
+
 <script>
 
     const signUpButton = document.getElementById('signUp');
 	const signInButton = document.getElementById('signIn');
 	const container = document.getElementById('container');
+	
 
 signUpButton.addEventListener('click', () => {
 	container.classList.add("right-panel-active");
