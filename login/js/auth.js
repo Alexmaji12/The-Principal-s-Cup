@@ -83,7 +83,7 @@ let sport_preference = document.getElementById('athlete-sport-preference').value
         // Hide the loading popup
         document.getElementById('loadingPopup').style.display = 'none';
         // Redirect to the dashboard after successful registration
-        window.location.replace= ('/login/athlete-dashboard/template/index.html');
+        window.location.replace= ("/login/athlete-dashboard/template/index.html");
       })
       .catch((error) => {
         console.error('Error registering athlete:', error);
@@ -153,7 +153,7 @@ if (registerTeam) {
         // Hide the loading popup
         document.getElementById('loadingPopup').style.display = 'none';
         // Redirect to the dashboard after successful registration
-        window.location.replace = ('login/scout-dashboard/template/index.html');
+        window.location.replace = ("login/scout-dashboard/template/index.html");
       })
       .catch((error) => {
         console.error('Error registering team:', error);
