@@ -83,7 +83,7 @@ let sport_preference = document.getElementById('athlete-sport-preference').value
         // Hide the loading popup
         document.getElementById('loadingPopup').style.display = 'none';
         // Redirect to the dashboard after successful registration
-        window.location.href = 'login/Athelete Dashboard/template/index.html';
+        window.location.href= ("/login/athlete-dashboard/template/index.html");
       })
       .catch((error) => {
         console.error('Error registering athlete:', error);
@@ -153,7 +153,7 @@ if (registerTeam) {
         // Hide the loading popup
         document.getElementById('loadingPopup').style.display = 'none';
         // Redirect to the dashboard after successful registration
-        window.location.href = 'login/Scout Dashboard/Scout Dashboard/index.html';
+        window.location.href = ("login/scout-dashboard/template/index.html");
       })
       .catch((error) => {
         console.error('Error registering team:', error);
@@ -197,9 +197,9 @@ if (registerTeam) {
             const role = userData.role;
 
             if (role === "athlete") {
-              window.location.href = "../login/Athelete Dashboard/template/index.html"; // Athlete dashboard
+              window.location.href = ("/login/athlete-dashboard/template/index.html"); // Athlete dashboard
           } else if (role === "team") {
-              window.location.href = "../login/Scout Dashboard/Scout Dashboard/index.html"; // Team dashboard
+              window.location.href = ("/login/scout-dashboard/template/index.html"); // Team dashboard
           } else {
               alert("No role assigned to this user.");
           }
