@@ -26,7 +26,7 @@ if (registerAthlete) {
 
     // Get the values of the password and confirm password fields
     var password = document.getElementById('athlete-password').value;
-    var confirmPassword = document.getElementById('confirm-athelete-password').value;
+    var confirmPassword = document.getElementById('confirm-athlete-password').value;
 
     // Perform the check if they are the same
     if (password !== confirmPassword) {
@@ -35,17 +35,20 @@ if (registerAthlete) {
     }
 
     // Create athlete data
-    var email = document.getElementById('athlete-email').value;
-    let fullname = document.getElementById('athlete-firstname').value + " " +
-    document.getElementById('athlete-lastname').value;
-let dob = document.getElementById('athlete-dob').value;
+    let name = document.getElementById('athlete-name').value;
+    let email = document.getElementById('athlete-email').value;
+let age = document.getElementById('athlete-age').value;
 let phone = document.getElementById('athlete-phone').value;
 let address = document.getElementById('athlete-address').value;
 let gender = document.getElementById('athlete-gender').value;
+let country = document.getElementById('athlete-country').value;
+let height = document.getElementById('athlete-height').value;
+let weight = document.getElementById('athlete-weight').value;
+let position = document.getElementById('athlete-position').value;
 let marital_status = document.getElementById('athlete-marital-status').value;
 let next_of_kin = document.getElementById('athlete-next-of-kin').value;
 let next_of_kin_phone = document.getElementById('athlete-next-of-kin-phone').value;
-let next_of_kin_email = document.getElementById('athlete-next-of-kin-email').value;
+let next_of_kin_address = document.getElementById('athlete-next-of-kin-address').value;
 let sport_preference = document.getElementById('athlete-sport-preference').value;
 
     // Create the user with email and password
@@ -59,18 +62,21 @@ let sport_preference = document.getElementById('athlete-sport-preference').value
         var userDocRef = firebase.firestore().collection('users').doc(user.uid);
 
         return userDocRef.set({
-          fullname: fullname,
+          name: name,
           email: email,
           role: 'athlete',
-          dob: dob,
+          age: age,
           phone: phone,
           address: address,
           gender: gender,
-          email: email,
+          country: country,
+          height: height,
+          weight: weight,
+          position: position,
           marital_status: marital_status,
           next_of_kin: next_of_kin,
-          next_of_kin_email: next_of_kin_email,
           next_of_kin_phone: next_of_kin_phone,
+          next_of_kin_address: next_of_kin_address,
           sport_preference: sport_preference
         });
       })
@@ -96,17 +102,17 @@ let sport_preference = document.getElementById('athlete-sport-preference').value
 }
 
 // Team Registration function
-let registerTeam = document.getElementById('register-team');
-if (registerTeam) {
-  registerTeam.addEventListener('click', (e) => {
+let registerScout = document.getElementById('register-scout');
+if (registerScout) {
+  registerScout.addEventListener('click', (e) => {
     e.preventDefault();
 
         // Show the loading popup during registration
         document.getElementById('loadingPopup').style.display = 'block';
 
     // Get the values of the password and confirm password fields
-    var password = document.getElementById('team-password').value;
-    var confirmPassword = document.getElementById('confirm-team-password').value;
+    var password = document.getElementById('scout-password').value;
+    var confirmPassword = document.getElementById('confirm-scout-password').value;
 
     // Perform the check if they are the same
     if (password !== confirmPassword) {
@@ -114,14 +120,15 @@ if (registerTeam) {
       return;
     }
 
-    // Create team data
-    var email = document.getElementById('team-email').value;
-    let teamName = document.getElementById('team-name').value;
-    let choiceOfSports = document.getElementById('team-choice').value;
-    let teamPhone = document.getElementById('team-phone').value;
-    let teamAddress = document.getElementById('team-address').value;
-    let teamNumber = document.getElementById('team-number').value;
-    let teamCoach = document.getElementById('team-coach').value;
+    // Create scout data
+    var email = document.getElementById('scout-email').value;
+    let scoutName = document.getElementById('scout-name').value;
+    let choiceOfSports = document.getElementById('scout-choice').value;
+    let scoutPhone = document.getElementById('scout-phone').value;
+    let scoutSex = document.getElementById('scout-sex').value;
+    let scoutAge = document.getElementById('scout-age').value;
+    let scoutNationality = document.getElementById('scout-nationality').value;
+    let scoutAddress = document.getElementById('scout-address').value;
 
     // Create the user with email and password
     auth.createUserWithEmailAndPassword(email, password)
@@ -134,13 +141,14 @@ if (registerTeam) {
         var userDocRef = firebase.firestore().collection('users').doc(user.uid);
 
         return userDocRef.set({
-          teamName: teamName,
+          scoutName: scoutName,
           email: email,
-          role: 'team',
-          teamAddress: teamAddress,
-          teamCoach: teamCoach,
-          teamPhone: teamPhone,
-          teamNumber: teamName,
+          role: 'scout',
+          scoutAddress: scoutAddress,
+          scoutSex: scoutSex,
+          scoutAge: scoutAge,
+          scoutPhone: scoutPhone,
+          scoutNationality: scoutNationality,
         choiceOfSports: choiceOfSports
         });
       })
@@ -198,8 +206,8 @@ if (registerTeam) {
 
             if (role === "athlete") {
               window.location.href = ("../dashboard/athelete-dashboard/template/index.html"); // Athlete dashboard
-          } else if (role === "team") {
-              window.location.href = ("../dashboard/scout-dashboard/template/index.html"); // Team dashboard
+          } else if (role === "scout") {
+              window.location.href = ("../dashboard/scout-dashboard/template/index.html"); // Scout dashboard
           } else {
               alert("No role assigned to this user.");
           }

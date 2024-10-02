@@ -1,4 +1,4 @@
-
+function initializeApp() {
 	const firebaseConfig = {
 		apiKey: "AIzaSyBLc5JHSbwJFjx0kLvDziTK1F1bCoe8MMo",
 		authDomain: "final-year-d05fa.firebaseapp.com",
@@ -8,7 +8,7 @@
 		appId: "1:837604640880:web:63b23487f69eeb3852ccb5",
 		measurementId: "G-JSTZJR8FDX"
 	};
-	
+	``
 	firebase.initializeApp(firebaseConfig);
 	// Initialize Firebase
 	const auth = firebase.auth();
@@ -36,60 +36,27 @@
 					var role = userData.role;
 	
 					if (role === "athlete") {
-						// access athlete data
-
-						var email = doc.data().email;
-							var name = doc.data().name;
-						
-							var athletePosition = doc.data().position;
-							var athleteHeight = doc.data().height;
-							var athleteWeight = doc.data().weight;
-							var athleteCountry = doc.data().country;
-							var athleteAge = doc.data().age;
-							var athletePhone = doc.data().phone;
-		
-							// Set user details on the dashboard
-							var nameElement = document.getElementById('userName');
-							if (nameElement != null) {
-								nameElement.innerText = name; 
-							}
-		
-							var countryElement = document.getElementById('userCountry');
-							if (countryElement != null) {
-								countryElement.innerText = athleteCountry;
-							}
-
-							var heightElement = document.getElementById('userHeight');
-							if (heightElement != null) {
-								heightElement.innerText = athleteHeight;
-							}
-
-							var weightElement = document.getElementById('userWeight');
-							if (weightElement != null) {
-								weightElement.innerText = athleteWeight;
-							}
-
-							var positionElement = document.getElementById('userPosition');
-							if (positionElement != null) {
-								positionElement.innerText = athletePosition;
-							}
-
-							var emailElement = document.getElementById('userEmail');
-							if (emailElement != null) {
-								emailElement.textContent = email;
-							}
-		
-							var phoneElement = document.getElementById('userPhone');
-							if (phoneElement != null) {
-								phoneElement.innerText = athletePhone;
-							}
-		
-							var ageElement = document.getElementById('userAge');
-							if (ageElement != null) {
-								ageElement.innerText = athleteAge;
-							}
+						// access users data
+						// var email = doc.data().email;
+						// var name = doc.data().scoutName;
+						// var scoutNationality = doc.data().scoutNationality;
+						// var phone = doc.data().scoutPhone;
+						// var age = doc.data().scoutAge;
 	
-				
+						// var name = document.getElementById('userName');
+						// if (fullname != null) {
+						// 	fullname.innerText = name;
+						// }
+	
+						// var email = document.getElementById('userEmail');
+						// if (userEmail != null) {
+						// 	userEmail.textContent = email;
+						// }
+	
+						// var nationality = document.getElementById('userNationality');
+						// if (nationality != null) {
+						// 	nationality.innerText = scoutNationality;
+						// }
 	
 					} else if (role === "scout") {
 							// Access scout user data
@@ -172,3 +139,4 @@
 		}
 	
 	})
+}

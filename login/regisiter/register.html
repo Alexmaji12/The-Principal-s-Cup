@@ -28,26 +28,28 @@
 		<form action="#" id="athlete-registration-form">
 			<h1>Register as Athlete</h1>
 			<span>Please fill in appropriately</span>
-			<input type="text" id="athlete-firstname" placeholder="First Name"/>
-			<input type="text" id="athlete-lastname" placeholder="Last Name"/>
-			<input type="text" id="athlete-email" placeholder="Email Address"/>
+			<input type="text" id="athlete-name" placeholder="Full Name"/>
+			<input type="email" id="athlete-email" placeholder="Email Address"/>
 			<input type="text" id="athlete-gender" placeholder="Sex"/>
-			<input type="date" id="athlete-dob" placeholder="Date of Birth"/>
+			<input type="text" id="athlete-age" placeholder="Age"/>
+			<input type="text" id="athlete-country" placeholder="Country"/>
+			<input type="text" id="athlete-height" placeholder="Height"/>
+			<input type="text" id="athlete-weight" placeholder="Weight"/>
+			<input type="text" id="athlete-position" placeholder="Position"/>
 			<input type="name" id="athlete-marital-status" placeholder="Marital Status"/>
 			<input type="text" id="athlete-sport-preference" placeholder="Enter Sports Preference">
 			<input type="text" id="athlete-address" placeholder="Address"/>
 			<input type="tel" id="athlete-phone" placeholder="Phone Number"/>
 			<input type="text" id="athlete-next-of-kin" placeholder="Next of Kin"/>
 			<input type="tel" id="athlete-next-of-kin-phone" placeholder="Next of Kin's Phone Number"/>
-			<input type="email" id="athlete-next-of-kin-email" placeholder="Next of Kin's Email Address"/>
 			<input type="text" id="athlete-next-of-kin-address" placeholder="Next of Kin's Address"/>
-			<input type="athlete-password" placeholder="Create Password">
-			<input type="confirm-athlete-password" placeholder="Re-Create Password">
-			<!-- <button type="submit" id="register-athlete">Sign Up</button><br> -->
-			<button>
+			<input type="password" id="athlete-password" placeholder="Create Password">
+			<input type="password" id="confirm-athlete-password" placeholder="Re-Create Password">
+			<button type="submit" id="register-athlete">Sign Up</button><br>
+			<!-- <button>
 				<a href="../dashboard/athlete-dashboard/template/index.html" style="color: white;">
 				Sign Up </a>
-				</button>
+				</button> -->
 			<p>Already Have an Account?</p>
 			<button>
 				<a href="../login/athlete-login.html" style="color: white;">
@@ -57,21 +59,21 @@
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#" id="team-registration-form">
+		<form action="#" id="scout-registration-form">
 			<h1>Register As Scout</h1>
 			<h4 style="font-size: larger;">Please fill in appropriately</h4>
-			<input type="text" id="team-name" placeholder="Full Name"/>
-			<input type="text" id="team-phone" placeholder="Phone Number" />
-			<input type="text" id="team-coach" placeholder="Sex" />
-			<input type="date" id="team-dob" placeholder="Date of Birth" />
-			<input type="text" id="team-choice" placeholder="Choice of Sports" />
-			<input type="text" id="team-number" placeholder="Nationality" />
-			<input type="team-email" id="team-email" placeholder="Email Address" />
-			<input type="text" id="team-address" placeholder="Residential Address" />
-			<input type="text" id="team-password" placeholder="Create Password" />
-			<input type="text" id="confirm-team-password" placeholder="Re-Enter Password" />
+			<input type="text" id="scout-name" placeholder="Full Name"/>
+			<input type="text" id="scout-phone" placeholder="Phone Number" />
+			<input type="text" id="scout-sex" placeholder="Sex" />
+			<input type="number" id="scout-age" placeholder="Age" />
+			<input type="text" id="scout-choice" placeholder="Choice of Sports" />
+			<input type="text" id="scout-nationality" placeholder="Nationality" />
+			<input type="email" id="scout-email" placeholder="Email Address" />
+			<input type="text" id="scout-address" placeholder="Residential Address" />
+			<input type="password" id="scout-password" placeholder="Create Password" />
+			<input type="password" id="confirm-scout-password" placeholder="Re-Enter Password" />
 			<!-- <a href="#">Forgot your password?</a> -->
-			<button type="submit" id="register-team">SUBMIT</button>
+			<button type="submit" id="register-scout">SUBMIT</button>
 			<p>Already have an Accoun?</p>
 				<button>
 					<a href="../login/scout-login.html" style="color: white;">
