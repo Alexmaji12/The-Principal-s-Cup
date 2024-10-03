@@ -70,11 +70,9 @@
             <!-- <img src="../../images/scout.JPEG"> -->
             <img src="#" alt="Upload image in Bio Data">
           </div>
-          <div class="user-name">
-              Rasheed
+          <div class="userName">
           </div>
-          <div class="user-designation">
-              Football Scout
+          <div class="choiceOfSports">
           </div>
         </div>
         <ul class="nav">
@@ -114,49 +112,27 @@
                   <h3 class="text-dark font-weight-bold mb-2">Football Athletes Data</h3>
                   <p class="card-description" style="font-weight: bolder;">
                     Please note, on requesting to meet or scout an althlete it is adviced that the admin gives all necessary permission and access if not OYO</p>
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Age</th>
-                          <th>Country</th>
-                          <th>Height</th>
-                          <th>Weight</th>
-                          <th>Position</th>
-                          <th>Media Link</th>
-                          <th>Dorminant Skill</th>
-                          <th>Contact</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Abdulbasit</td>
-                          <td>23 Year Old</td>
-                          <td>Nigerian</td>
-                          <td>Not Available</td>
-                          <td>Not Available</td>
-                          <td>Not Available</td>
-                          <td><a href="#">Not Available</a></td>
-                          <td>Not Avaible</td>
-                          <td><label class="badge badge-danger">
-                            <a href="#" style="color: white; font-weight: bolder;">Unavaible</a></label></td>
-                        </tr>
-                        <!-- <tr>
-                          <td>Kiforo David</td>
-                          <td>24 Year Old</td>
-                          <td>Nigerian</td>
-                          <td>1.85m</td>
-                          <td>63kg</td>
-                          <td>GoalKeeper</td>
-                          <td><a href="youtube.com/hgsfgert5423">Youtube</a></td>
-                          <td>Sticky Hands</td>
-                          <td><label class="badge badge-success">
-                            <a href="#" style="color: white; font-weight: bolder;">Avaible</a></label></td>
-                        </tr> -->
-                      </tbody>
-                    </table>
+                    <div class="table-responsive">
+                      <table class="table" id="athleteTable">
+                          <thead>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>Age</th>
+                                  <th>Country</th>
+                                  <th>Height</th>
+                                  <th>Weight</th>
+                                  <th>Position</th>
+                                  <th>Media Link</th>
+                                  <th>Dominant Skill</th>
+                                  <th>Contact</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <!-- Dynamic rows will be inserted here -->
+                          </tbody>
+                      </table>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -186,6 +162,17 @@
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-storage.js"></script>
+  
+    <script src="../../../../../js/auth.js"></script>
+  
+    <script src="../../../../../js/firebase.js"></script>
+  
   <!-- endinject -->
   <!-- plugin js for this page -->
   <!-- End plugin js for this page -->

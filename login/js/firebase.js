@@ -98,6 +98,7 @@
 							var scoutNationality = doc.data().scoutNationality;
 							var scoutPhone = doc.data().scoutPhone;
 							var scoutAge = doc.data().scoutAge;
+							var choiceOfSports = doc.data().choiceOfSports;
 		
 							// Set user details on the dashboard
 							var nameElement = document.getElementById('userName');
@@ -124,6 +125,11 @@
 							if (ageElement != null) {
 								ageElement.innerText = scoutAge;
 							}
+
+							var choiceOfSportsElement = document.getElementById('choiceOfSports');
+							if (choiceOfSportsElement != null) {
+								choiceOfSportsElement.innerText = choiceOfSports;
+							} 
 	
 						// 	const { scoutName, email, scoutNationality, scoutPhone, scoutAge } = userData;
 	
@@ -145,6 +151,39 @@
 			}).catch(function (error) {
 				console.log("Error getting document:", error)
 			});
+
+			// Fetch athletes from Firestore
+database.collection("users").where("role", "==", "athlete").get().then((querySnapshot) => {
+    const athleteTableBody = document.querySelector("#athleteTable tbody"); // Targeting specific tbody
+    athleteTableBody.innerHTML = ""; // Clear existing rows
+    
+    querySnapshot.forEach((doc) => {
+        const athleteData = doc.data();
+        const athleteRow = `
+            <tr>
+                <td>${athleteData.name || 'Not Available'}</td>
+                <td>${athleteData.age || 'Not Available'}</td>
+                <td>${athleteData.country || 'Not Available'}</td>
+                <td>${athleteData.height || 'Not Available'}</td>
+                <td>${athleteData.weight || 'Not Available'}</td>
+                <td>${athleteData.position || 'Not Available'}</td>
+                <td><a href="${athleteData.mediaLink || '#'}">Media Link</a></td>
+                <td>${athleteData.dominantSkill || 'Not Available'}</td>
+                <td>
+                    <label class="badge badge-danger">
+                        <a href="tel:${athleteData.phone || '#'}" style="color: white; font-weight: bolder;">
+                            ${athleteData.phone ? athleteData.phone : 'Unavailable'}
+                        </a>
+                    </label>
+                </td>
+            </tr>
+        `;
+        athleteTableBody.insertAdjacentHTML('beforeend', athleteRow);
+    });
+}).catch((error) => {
+    console.log("Error getting athletes: ", error);
+});
+
 	
 	
 			document.getElementById('signout').addEventListener('click', function () {
