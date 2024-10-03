@@ -89,7 +89,7 @@ let sport_preference = document.getElementById('athlete-sport-preference').value
         // Hide the loading popup
         document.getElementById('loadingPopup').style.display = 'none';
         // Redirect to the dashboard after successful registration
-        window.location.href= ("../dashboard/athelete-dashboard/template/index.html");
+        window.location.href= ("../dashboard/athlete-dashboard/template/index.html");
       })
       .catch((error) => {
         console.error('Error registering athlete:', error);
