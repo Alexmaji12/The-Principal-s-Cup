@@ -205,7 +205,7 @@ if (registerScout) {
             const role = userData.role;
 
             if (role === "athlete") {
-              window.location.href = ("../dashboard/athelete-dashboard/template/index.html"); // Athlete dashboard
+              window.location.href = ("../dashboard/athlete-dashboard/template/index.html"); // Athlete dashboard
           } else if (role === "scout") {
               window.location.href = ("../dashboard/scout-dashboard/template/index.html"); // Scout dashboard
           } else {
