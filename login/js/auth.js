@@ -205,9 +205,9 @@ if (registerScout) {
             const role = userData.role;
 
             if (role === "athlete") {
-              window.location.href = ("../dashboard/athlete-dashboard/template/index.html"); // Athlete dashboard
+              window.location.href = ("dashboard/athlete-dashboard/template/index.html"); // Athlete dashboard
           } else if (role === "scout") {
-              window.location.href = ("../dashboard/scout-dashboard/template/index.html"); // Scout dashboard
+              window.location.href = ("dashboard/scout-dashboard/template/index.html"); // Scout dashboard
           } else {
               alert("No role assigned to this user.");
           }
